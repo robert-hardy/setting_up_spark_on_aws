@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e -x
 apt-get update
 apt-get install openjdk-8-jdk
 apt-get install scala
