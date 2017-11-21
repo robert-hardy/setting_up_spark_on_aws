@@ -10,3 +10,7 @@ Create a new `authorized_keys` by combining my AWS key pair with this:
 Copy it across to the slave
 
     localhost$ scp authorized_keys ubuntu@slave-public-dns:/home/ubuntu/.ssh/authorized_keys
+
+Actually it might be possible to do this more easily with
+
+    localhost$ ssh-copy-id -i master_public_key ubuntu@slave-public-dns
