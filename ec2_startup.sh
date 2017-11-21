@@ -4,7 +4,7 @@ set -e -x
 apt-get update
 apt-get install openjdk-8-jdk
 apt-get install scala
-wget http://apache.mirror.anlx.net/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz -P ~/
+wget -q http://apache.mirror.anlx.net/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz -P ~/
 tar zxvf spark-2.2.0-bin-hadoop2.7.tgz -C /usr/local
 ln -s /usr/local/spark-2.2.0-bin-hadoop2.7/ /usr/local/spark
 cat << 'EOF' > ~/.profile
