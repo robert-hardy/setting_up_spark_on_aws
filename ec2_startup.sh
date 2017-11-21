@@ -14,7 +14,7 @@ EOF
 . ~/.profile
 chown -R ubuntu $SPARK_HOME
 cat << EOF > /usr/local/spark/conf/spark-env.sh
-export JAVA_HOME=/usr
-export SPARK_PUBLIC_DNS="ec2-18-216-150-119.us-east-2.compute.amazonaws.com"
+export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
+export SPARK_PUBLIC_DNS="`curl -s http://169.254.169.254/latest/meta-data/public-hostname`"
 export SPARK_WORKER_CORES=6
 EOF
