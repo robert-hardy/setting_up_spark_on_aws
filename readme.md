@@ -1,6 +1,6 @@
 Generate a key pair on master and copy it back to local with
 
-    scp ubuntu@master-public-dns:/home/ubuntu/.ssh/id_rsa.pub master_public_key
+    localhost$ scp ubuntu@master-public-dns:/home/ubuntu/.ssh/id_rsa.pub master_public_key
 
 Create a new `authorized_keys` by combining my AWS key pair with this:
 
