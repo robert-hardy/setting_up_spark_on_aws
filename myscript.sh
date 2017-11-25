@@ -39,5 +39,5 @@ do
 	ssh ubuntu@$host < write_spark_env.sh
 
 	echo Writing into hosts (see https://stackoverflow.com/a/23549826/1243435)
-	cat <(echo) etc_hosts | ssh ubuntu@master "sudo tee -a /etc/hosts"
+	cat <(echo) etc_hosts | ssh ubuntu@$host "sudo tee -a /etc/hosts"
 done
