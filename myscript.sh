@@ -38,6 +38,6 @@ do
 	echo Writing env vars into the spark-env file
 	ssh ubuntu@$host < write_spark_env.sh
 
-	echo Writing into etc/hosts
-	ssh ubuntu@$host sudo cat >> /etc/hosts < etc_hosts
+	echo Writing into hosts
+	cat <(echo) etc_hosts | ssh ubuntu@master "sudo tee -a /etc/hosts"
 done
