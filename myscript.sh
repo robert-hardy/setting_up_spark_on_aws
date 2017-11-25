@@ -47,3 +47,6 @@ echo Creating keys on master and copying to slave
 ssh ubuntu@master 'ssh-keygen -f id_rsa -t rsa -P ""'
 scp ubuntu@master:.ssh/id_rsa.pub master_key.pub
 ssh-copy-id -f -i master_key ubuntu@slave
+
+echo Tell master who the slaves are
+ssh ubuntu@master 'echo slave >> /usr/local/spark/conf/slaves'
