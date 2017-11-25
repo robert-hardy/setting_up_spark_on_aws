@@ -2,15 +2,12 @@ hosts=(master slave)
 
 for host in "${hosts[@]}"
 do
+	echo Working on $host
+	echo =================
 	ssh ubuntu@$host sudo apt-get update
 	ssh ubuntu@$host sudo apt-get --assume-yes install openjdk-8-jdk
 	ssh ubuntu@$host sudo apt-get --assume-yes install scala
-done
 
-for host in "${hosts[@]}"
-do
-	echo Working on $host
-	echo =================
 	echo Checking $host for the tarball
 	ssh ubuntu@$host test -e spark-2.2.0-bin-hadoop2.7.tgz
 	EXIT_CODE=$?
