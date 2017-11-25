@@ -28,4 +28,11 @@ do
 	fi
 	ssh ubuntu@$host sudo chown -R ubuntu /usr/local/spark
 
+	echo Writing into the .profile file
+	ssh -T ubuntu@$host cat << EOF > ~/.profile
+	export JAVA_HOME=$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')
+	export SPARK_HOME=/usr/local/spark-2.2.0-bin-hadoop2.7/
+	export PATH=\$PATH:\$SPARK_HOME/bin
+	EOF
+	. .profile
 done
