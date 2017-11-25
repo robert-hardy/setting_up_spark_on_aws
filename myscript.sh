@@ -42,3 +42,8 @@ do
 	# See https://stackoverflow.com/a/23549826/1243435.
 	cat <(echo) etc_hosts | ssh ubuntu@$host "sudo tee -a /etc/hosts"
 done
+
+echo Creating keys on master and copying to slave
+ssh ubuntu@master 'ssh-keygen -f id_rsa -t rsa -P ""'
+scp ubuntu@master:.ssh/id_rsa.pub master_key.pub
+ssh-copy-id -f -i master_key ubuntu@slave
