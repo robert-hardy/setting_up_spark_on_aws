@@ -9,6 +9,8 @@ done
 
 for host in "${hosts[@]}"
 do
+	echo Working on $host
+	echo =================
 	echo Checking $host for the tarball
 	ssh ubuntu@$host test -e spark-2.2.0-bin-hadoop2.7.tgz
 	EXIT_CODE=$?
@@ -23,7 +25,10 @@ do
 	if [ $EXIT_CODE -eq 0 ]; then
 		echo The tarball has been unpacked.
 	else
-		ssh ubuntu@$host sudo tar zxvf spark-2.2.0-bin-hadoop2.7.tgz
-		mkdir -p /usr/local/spark
+		ssh ubuntu@$host tar zxvf --overwrite spark-2.2.0-bin-hadoop2.7.tgz
+		ssh ubuntu@$host sudo mkdir -p /usr/local/spark
+		ssh ubuntu@$host sudo mv -v spark-2.2.0-bin-hadoop2.7/* /usr/local/spark
 	fi
+	ssh ubuntu@$host sudo chown -R ubuntu /usr/local/spark
+
 done
