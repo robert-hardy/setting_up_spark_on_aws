@@ -30,4 +30,7 @@ do
 
 	echo Writing into the .profile file
 	ssh ubuntu@$host < write_to_dot_profile.sh
+
+	echo Writing into the spark-env file
+	ssh ubuntu@$host < write_spark_env.sh
 done
