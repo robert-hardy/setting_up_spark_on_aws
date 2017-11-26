@@ -1,3 +1,6 @@
+echo Writing hosts into this Macbook '/etc/hosts'
+cat <(echo) etc_hosts | sudo tee -a /etc/hosts
+
 hosts=(master slave)
 
 for host in "${hosts[@]}"
