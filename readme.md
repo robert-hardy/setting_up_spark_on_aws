@@ -10,3 +10,7 @@ like
 Run
 
     source myscript.sh
+
+On the master run
+
+    /usr/local/spark/sbin/start-all.sh

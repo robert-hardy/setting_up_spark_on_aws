@@ -29,7 +29,7 @@ do
 		echo The Spark home directory is already set up.
 	else
 		echo Unpacking the tarball, setting up the Spark home dir.
-		ssh ubuntu@$host tar zxvf --overwrite spark-2.2.0-bin-hadoop2.7.tgz
+		ssh ubuntu@$host tar zxvf spark-2.2.0-bin-hadoop2.7.tgz
 		ssh ubuntu@$host sudo mkdir -p /usr/local/spark
 		ssh ubuntu@$host sudo mv -v spark-2.2.0-bin-hadoop2.7/* /usr/local/spark
 	fi
@@ -48,8 +48,8 @@ do
 done
 
 echo Creating keys on master and copying to slave
-ssh ubuntu@master 'ssh-keygen -f id_rsa -t rsa -P ""'
-scp ubuntu@master:.ssh/id_rsa.pub master_key.pub
+ssh ubuntu@master 'ssh-keygen -f ~/.ssh/id_rsa -t rsa -P ""'
+scp ubuntu@master:/home/ubuntu/.ssh/id_rsa.pub master_key.pub
 ssh-copy-id -f -i master_key ubuntu@slave
 
 echo Tell master who the slaves are
