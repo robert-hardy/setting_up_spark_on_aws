@@ -40,6 +40,7 @@ do
 
 	echo Writing into hosts
 	# See https://stackoverflow.com/a/23549826/1243435.
+	# The <(echo) bit simply adds a newline before the contents of etc_hosts.
 	cat <(echo) etc_hosts | ssh ubuntu@$host "sudo tee -a /etc/hosts"
 done
 
