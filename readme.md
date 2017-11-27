@@ -11,6 +11,6 @@ Run
 
     source myscript.sh
 
-On the master run
+Start all with
 
-    /usr/local/spark/sbin/start-all.sh
+    ssh ubuntu@master '/usr/local/spark/sbin/start-all.sh'
