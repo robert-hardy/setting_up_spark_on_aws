@@ -21,8 +21,8 @@
         sudo mv spark-2.2.0-bin-hadoop2.7/* /usr/local/spark
 1. Add these to the `.profile`:
 
-      export JAVA_HOME=$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')
-      export SPARK_HOME=/usr/local/spark
-      export PATH=$PATH:${SPARK_HOME}/bin
+        export JAVA_HOME=$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')
+        export SPARK_HOME=/usr/local/spark
+        export PATH=$PATH:${SPARK_HOME}/bin
 
     Then source it with `. .profile`.
