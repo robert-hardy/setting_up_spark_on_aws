@@ -32,3 +32,11 @@
         export JAVA_HOME=$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')
         export SPARK_PUBLIC_DNS="`curl -s http://169.254.169.254/latest/meta-data/public-hostname`"
         export SPARK_WORKER_CORES=2
+
+1. Chown the dir:
+
+        sudo chown -R ubuntu $SPARK_HOME
+
+1. Start the `master` node:
+
+        /usr/local/spark/sbin/start-master.sh
