@@ -15,7 +15,7 @@
     Check with `scala -version`.
 1. Download Spark and unpack:
 
-        wget http://apache.mirror.anlx.net/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz -P ~/
+        wget http://apache.mirror.anlx.net/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
         tar zxvf spark-2.2.0-bin-hadoop2.7.tgz
         sudo mkdir /usr/local/spark
         sudo mv spark-2.2.0-bin-hadoop2.7/* /usr/local/spark
