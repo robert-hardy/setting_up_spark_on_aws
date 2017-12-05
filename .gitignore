@@ -1,5 +1,3 @@
 *.log
-master_key
 master_key.pub
-master_pub_key
 metastore_db/
