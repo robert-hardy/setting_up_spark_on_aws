@@ -15,3 +15,10 @@ I didn't manage to set the worker port with
     SPARK_WORKER_PORT=12346 spark-shell --master spark://ip-172-31-21-131.us-east-2.compute.internal:7077 --conf spark.driver.port=12345
 
 Don't know why it didn't work.
+
+
+Managed to run a submit job like this:
+
+    /usr/local/spark/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://ip-172-31-26-146.us-east-2.compute.internal:7077 /usr/local/spark/examples/jars/spark-examples_2.11-2.2.0.jar 1000
+
+See [here](https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit).
