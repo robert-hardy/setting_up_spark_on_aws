@@ -15,3 +15,7 @@
 
         ssh ubuntu@slave0 '/usr/local/spark/sbin/start-slave.sh spark://ip-172-31-21-131.us-east-2.compute.internal:7077'
         ssh ubuntu@slave0 '/usr/local/spark/sbin/start-slave.sh spark://ip-172-31-21-131.us-east-2.compute.internal:7077'
+1. See the UI of them both at `<public_dns>:8081` (need to allow 8081 in the
+   `slaves` security group).
+1. See them registered with the master on its UI (need to allow 7077 on
+   `master`).
