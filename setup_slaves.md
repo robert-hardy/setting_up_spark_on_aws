@@ -9,7 +9,6 @@
         ssh ubuntu@slave0
         ssh ubuntu@slave1
 
-1. Put all 3 in file `etc_hosts`, it will be written via ssh.
 1. Run `. setup_slaves.sh` from Macbook, to do the installs and env vars setup.
 1. Start up the slaves with
 
