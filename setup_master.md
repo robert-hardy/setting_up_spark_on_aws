@@ -41,5 +41,5 @@
 
         /usr/local/spark/sbin/start-master.sh
 
-1. Go see its UI at `<public_dns>:8080` (need to allow 8080 in the `master`
+1. Go see its UI at `<public_dns>:8080`.
    security group).
