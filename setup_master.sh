@@ -40,12 +40,14 @@ do
 	echo Writing env vars into the spark-env file
 	ssh ubuntu@$host < write_spark_env.sh
 
+	# Not sure that we need this step if we are not using SSH.
 	echo Writing into hosts
 	# See https://stackoverflow.com/a/23549826/1243435.
 	# The <(echo) bit simply adds a newline before the contents of etc_hosts.
 	cat <(echo) etc_hosts | ssh ubuntu@$host "sudo tee -a /etc/hosts"
 done
 
+# Not sure that we need this step if we are not using SSH.
 echo Tell master who the slaves are
 ssh ubuntu@master 'echo slave0 >> /usr/local/spark/conf/slaves'
 ssh ubuntu@master 'echo slave1 >> /usr/local/spark/conf/slaves'
