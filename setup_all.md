@@ -17,7 +17,8 @@
 1. Connect to `master` and start all with
 
         /usr/local/spark/sbin/start-all.sh
-1. Connect to the master node and start the shell:
+1. Visit the UI of the master and get its URL.
+1. Connect to the master node and start the shell, something like:
 
         spark-shell --master spark://ip-172-31-28-157.us-east-2.compute.internal:7077
 
