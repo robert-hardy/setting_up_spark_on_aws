@@ -1,7 +1,7 @@
 Setting up Spark on AWS from scratch
 ====
 
-This repo contains scripts and readme pages that were used in a presentation that I gave at [CodeNode](https://skillsmatter.com/contact-us) in December 2017.
+This repo contains notes and scripts that I used in a presentation that I gave at [CodeNode](https://skillsmatter.com/contact-us) in December 2017.
 
 The idea for that talk was to show how to set up a Spark cluster on spot-requested EC2 instances and generally to give people a sense of how all the pieces fit together (EC2 security groups, key pairs, ports, environment variables, etc.).
 
