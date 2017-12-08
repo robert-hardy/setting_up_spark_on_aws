@@ -19,3 +19,12 @@ script `setup_master.sh` which does it all),
     - see instructions `setup_slaves.md` and use `setup_slaves.sh` to set up
 the two slaves.
 2. Get 2 instances running on EC2 and use a single script `setup_all.sh` to get them both set up.
+
+*Note*: in the presentation I opened up all ports on the EC2 instances. You
+should be aware that this leaves your cluster exposed to others. It was the
+easiest way to get things running within an hour, but *you should not do that*!
+
+One approach is to open all ports but specify that the ports are accessible
+only from machines in the cluster. That requires some knowledge of EC2 and you
+might find it helpful to read through the `spark_ec2.py` script on [this GitHub
+repo](https://github.com/amplab/spark-ec2) to see how they do it.
